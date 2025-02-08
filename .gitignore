@@ -6,6 +6,7 @@
 
 # Ignore directories
 ny_taxi_postgres_data/
+output
 
 # Ignore Python cache files
 __pycache__/
