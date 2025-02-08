@@ -15,7 +15,7 @@ def main(params):
     url = params.url
 
     # Download the dataset file
-    file_name = "output.csv"
+    file_name = "output"
     os.system(f"wget {url} -O {file_name}")
     
     # Create database engine
@@ -35,21 +35,14 @@ if __name__ == "__main__":
 
     # Arguments needed for parser
     # user, password, host, port, database name, table name and url of PARQUET file
-    parser.add_argument("user", help="username for Postgres")
-    parser.add_argument("password", help="password for Postgres")
-    parser.add_argument("host", help="host for Postgres")
-    parser.add_argument("port", help="port for Postgres")
-    parser.add_argument("db", help="database name")
-    parser.add_argument("table", help="name of the table where results are written to")
-    parser.add_argument("url", help="url of the dataset")
+    parser.add_argument("--user", help="username for Postgres")
+    parser.add_argument("--password", help="password for Postgres")
+    parser.add_argument("--host", help="host for Postgres")
+    parser.add_argument("--port", help="port for Postgres")
+    parser.add_argument("--db", help="database name")
+    parser.add_argument("--table", help="name of the table where results are written to")
+    parser.add_argument("--url", help="url of the dataset")
 
     args = parser.parse_args()
 
     main(args)
-
-
-
-
-
-
-
