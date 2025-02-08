@@ -1,0 +1,14 @@
+# Ignore log files
+*.log
+
+# Ignore jupyter notebooks
+*.ipynb
+
+# Ignore directories
+ny_taxi_postgres_data/
+
+# Ignore Python cache files
+__pycache__/
+
+# Ignore original dataset
+yellow_tripdata_2021-01.parquet
