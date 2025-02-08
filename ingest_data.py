@@ -22,9 +22,12 @@ def main(params):
     df = pd.read_parquet(file_name, engine="pyarrow")
 
     # Create an empty table with only header row
-    df.head(0).to_sql(name="yellow_taxi_data", con=engine, if_exists="replace")
+    df.head(0).to_sql(name=table, con=engine, if_exists="replace")
     # Write the rest of the file, by appending to the existing table
-    df.to_sql(name="yellow_taxi_data", con=engine, if_exists="append")
+    df.to_sql(name=table, con=engine, if_exists="append")
+
+if __name__ == "__main__":
+    main()
 
 # Define parser and its arguments
 parser = argparse.ArgumentParser(description="Ingest PARQUET data to Postgres")
